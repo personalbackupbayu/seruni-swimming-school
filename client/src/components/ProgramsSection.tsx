@@ -1,34 +1,18 @@
 import ProgramCard from './ProgramCard';
-import { Baby, Zap, Award } from 'lucide-react';
+import { Zap, Award, Crown } from 'lucide-react';
 
 /**
  * Programs Section Component - Modern Aquatic Minimalism
- * Menampilkan semua program renang dalam grid layout
+ * Menampilkan 3 program renang: Pemula, Menengah, Mahir
  * Design: Organized dengan wave divider
  */
 
 const programs = [
   {
-    title: 'Kelas Bayi',
-    level: 'Pemula',
-    description: 'Pengenalan air untuk bayi dan balita',
-    ageGroup: '6 bulan - 3 tahun',
-    duration: '30 menit',
-    price: 'Rp 300.000',
-    maxStudents: 4,
-    features: [
-      'Pengenalan air yang aman',
-      'Bonding dengan orang tua',
-      'Gerakan dasar renang',
-      'Sertifikat kelulusan',
-    ],
-    icon: <Baby />,
-  },
-  {
     title: 'Kelas Pemula',
     level: 'Dasar',
-    description: 'Belajar teknik renang dasar untuk anak-anak',
-    ageGroup: '4 - 7 tahun',
+    description: 'Belajar teknik renang dasar untuk anak-anak dan pemula',
+    ageGroup: '4+ tahun',
     duration: '45 menit',
     price: 'Rp 400.000',
     maxStudents: 6,
@@ -44,7 +28,7 @@ const programs = [
     title: 'Kelas Menengah',
     level: 'Intermediate',
     description: 'Pengembangan teknik dan kecepatan renang',
-    ageGroup: '8 - 12 tahun',
+    ageGroup: '8+ tahun',
     duration: '60 menit',
     price: 'Rp 500.000',
     maxStudents: 8,
@@ -57,12 +41,12 @@ const programs = [
     icon: <Award />,
   },
   {
-    title: 'Kelas Remaja',
+    title: 'Kelas Mahir',
     level: 'Advanced',
-    description: 'Program untuk remaja dan dewasa',
-    ageGroup: '13+ tahun',
-    duration: '60 menit',
-    price: 'Rp 550.000',
+    description: 'Program untuk atlet dan perenang berpengalaman',
+    ageGroup: '12+ tahun',
+    duration: '90 menit',
+    price: 'Rp 600.000',
     maxStudents: 10,
     features: [
       'Teknik profesional',
@@ -70,39 +54,7 @@ const programs = [
       'Pelatihan intensif',
       'Coaching personal',
     ],
-    icon: <Award />,
-  },
-  {
-    title: 'Kelas Dewasa',
-    level: 'Semua Level',
-    description: 'Program renang untuk orang dewasa',
-    ageGroup: '18+ tahun',
-    duration: '60 menit',
-    price: 'Rp 450.000',
-    maxStudents: 8,
-    features: [
-      'Belajar dari nol',
-      'Fitness dan kesehatan',
-      'Teknik yang benar',
-      'Fleksibel jadwal',
-    ],
-    icon: <Zap />,
-  },
-  {
-    title: 'Kelas Privat',
-    level: 'Personal',
-    description: 'Pelatihan one-on-one dengan coach profesional',
-    ageGroup: 'Semua usia',
-    duration: '45 menit',
-    price: 'Rp 750.000',
-    maxStudents: 1,
-    features: [
-      'Coaching personal',
-      'Program custom',
-      'Jadwal fleksibel',
-      'Hasil maksimal',
-    ],
-    icon: <Award />,
+    icon: <Crown />,
   },
 ];
 
@@ -125,7 +77,7 @@ export default function ProgramsSection() {
             Pilih Program Renang Terbaik
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Kami menyediakan berbagai program renang untuk semua usia dan tingkat kemampuan, dengan pelatih profesional bersertifikat.
+            Kami menyediakan tiga program renang dengan pelatih profesional bersertifikat untuk mengembangkan kemampuan renang Anda.
           </p>
         </div>
 

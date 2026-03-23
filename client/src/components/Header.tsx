@@ -47,7 +47,10 @@ export default function Header() {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <a href="tel:087880343055" className="text-sm text-primary font-semibold hover:underline">
+            0878-8034-3055
+          </a>
           <Button
             className="bg-primary hover:bg-blue-800 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-200"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

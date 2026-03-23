@@ -36,11 +36,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-0.5 flex-shrink-0" />
-                <span className="text-blue-100">+62 812-3456-7890</span>
+                <span className="text-blue-100">0878-8034-3055</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 flex-shrink-0" />
-                <span className="text-blue-100">info@seruniswimming.com</span>
+                <span className="text-blue-100">seruniswimmingschool@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />

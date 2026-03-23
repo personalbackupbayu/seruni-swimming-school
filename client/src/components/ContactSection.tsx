@@ -77,8 +77,8 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-foreground mb-1">Telepon</h4>
                 <p className="text-foreground/70 mb-2">Hubungi kami untuk konsultasi gratis</p>
-                <a href="tel:+6281234567890" className="text-primary font-semibold hover:underline">
-                  +62 812-3456-7890
+                <a href="tel:087880343055" className="text-primary font-semibold hover:underline">
+                  0878-8034-3055
                 </a>
               </div>
             </div>
@@ -91,8 +91,8 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-foreground mb-1">Email</h4>
                 <p className="text-foreground/70 mb-2">Kirim pertanyaan Anda kepada kami</p>
-                <a href="mailto:info@seruniswimming.com" className="text-primary font-semibold hover:underline">
-                  info@seruniswimming.com
+                <a href="mailto:seruniswimmingschool@gmail.com" className="text-primary font-semibold hover:underline">
+                  seruniswimmingschool@gmail.com
                 </a>
               </div>
             </div>
@@ -192,12 +192,9 @@ export default function ContactSection() {
                   className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors bg-white"
                 >
                   <option value="">Pilih program...</option>
-                  <option value="bayi">Kelas Bayi (6 bulan - 3 tahun)</option>
-                  <option value="pemula">Kelas Pemula (4 - 7 tahun)</option>
-                  <option value="menengah">Kelas Menengah (8 - 12 tahun)</option>
-                  <option value="remaja">Kelas Remaja (13+ tahun)</option>
-                  <option value="dewasa">Kelas Dewasa (18+ tahun)</option>
-                  <option value="privat">Kelas Privat</option>
+                  <option value="pemula">Kelas Pemula (4+ tahun)</option>
+                  <option value="menengah">Kelas Menengah (8+ tahun)</option>
+                  <option value="mahir">Kelas Mahir (12+ tahun)</option>
                 </select>
               </div>
 
