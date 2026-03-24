@@ -82,15 +82,15 @@ export default function HeroSection({
               <p className="text-sm text-muted-foreground mb-4">Dipercaya oleh ribuan keluarga</p>
               <div className="flex gap-6 text-sm">
                 <div>
-                  <p className="font-bold text-primary text-lg">500+</p>
+                  <p className="font-bold text-primary text-lg">100+</p>
                   <p className="text-muted-foreground">Siswa Aktif</p>
                 </div>
                 <div>
-                  <p className="font-bold text-primary text-lg">15+</p>
+                  <p className="font-bold text-primary text-lg">10</p>
                   <p className="text-muted-foreground">Pelatih Profesional</p>
                 </div>
                 <div>
-                  <p className="font-bold text-primary text-lg">10+</p>
+                  <p className="font-bold text-primary text-lg">12+</p>
                   <p className="text-muted-foreground">Tahun Pengalaman</p>
                 </div>
               </div>

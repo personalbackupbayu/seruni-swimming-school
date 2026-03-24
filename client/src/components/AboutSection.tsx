@@ -60,7 +60,7 @@ export default function AboutSection() {
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-6 max-w-xs">
               <p className="text-sm text-muted-foreground mb-2">Dipercaya oleh</p>
-              <p className="heading-2 text-primary">500+ Siswa</p>
+              <p className="heading-2 text-primary">100+ Siswa</p>
               <p className="text-xs text-muted-foreground mt-2">Aktif di Seruni Swimming School</p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function AboutSection() {
           {/* Right - Text Content */}
           <div>
             <h3 className="heading-1 text-primary mb-6">
-              Sekolah Renang Terpercaya Sejak 2015
+              Sekolah Renang Terpercaya Sejak 2012
             </h3>
 
             <p className="text-foreground/80 mb-6 leading-relaxed">
@@ -82,12 +82,12 @@ export default function AboutSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-blue-50 rounded-lg p-4 text-center">
-                <p className="heading-2 text-primary">10+</p>
+                <p className="heading-2 text-primary">12+</p>
                 <p className="text-xs text-muted-foreground mt-1">Tahun Pengalaman</p>
               </div>
               <div className="bg-blue-50 rounded-lg p-4 text-center">
-                <p className="heading-2 text-primary">15+</p>
-                <p className="text-xs text-muted-foreground mt-1">Pelatih Profesional</p>
+                <p className="heading-2 text-primary">100+</p>
+                <p className="text-xs text-muted-foreground mt-1">Siswa Aktif</p>
               </div>
               <div className="bg-blue-50 rounded-lg p-4 text-center">
                 <p className="heading-2 text-primary">2</p>

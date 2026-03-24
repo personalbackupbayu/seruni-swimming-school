@@ -1,9 +1,9 @@
 import ProgramCard from './ProgramCard';
-import { Zap, Award, Crown } from 'lucide-react';
+import { Zap, Award, Crown, Star } from 'lucide-react';
 
 /**
  * Programs Section Component - Modern Aquatic Minimalism
- * Menampilkan 3 program renang: Pemula, Menengah, Mahir
+ * Menampilkan 4 program renang: Pemula, Menengah, Mahir, Private
  * Design: Organized dengan wave divider
  */
 
@@ -27,15 +27,15 @@ const programs = [
   {
     title: 'Kelas Menengah',
     level: 'Intermediate',
-    description: 'Pengembangan teknik dan kecepatan renang',
+    description: 'Pengembangan teknik 2 gaya: Bebas dan Dada',
     ageGroup: '8+ tahun',
     duration: '60 menit',
     price: 'Rp 500.000',
     maxStudents: 8,
     features: [
-      'Empat gaya renang',
-      'Teknik advanced',
-      'Persiapan kompetisi',
+      'Gaya Bebas (Freestyle)',
+      'Gaya Dada (Breaststroke)',
+      'Teknik breathing yang benar',
       'Stamina dan kecepatan',
     ],
     icon: <Award />,
@@ -43,18 +43,34 @@ const programs = [
   {
     title: 'Kelas Mahir',
     level: 'Advanced',
-    description: 'Program untuk atlet dan perenang berpengalaman',
+    description: 'Program untuk atlet dengan penguasaan 4 gaya renang',
     ageGroup: '12+ tahun',
     duration: '90 menit',
     price: 'Rp 600.000',
     maxStudents: 10,
     features: [
-      'Teknik profesional',
-      'Persiapan olimpik',
-      'Pelatihan intensif',
-      'Coaching personal',
+      'Gaya Bebas (Freestyle)',
+      'Gaya Dada (Breaststroke)',
+      'Gaya Punggung (Backstroke)',
+      'Gaya Kupu-kupu (Butterfly)',
     ],
     icon: <Crown />,
+  },
+  {
+    title: 'Kelas Private',
+    level: 'Personal',
+    description: 'Pelatihan one-on-one dengan coach profesional',
+    ageGroup: 'Semua usia',
+    duration: 'Fleksibel',
+    price: 'DM',
+    maxStudents: 1,
+    features: [
+      'Coaching personal',
+      'Program custom',
+      'Jadwal fleksibel',
+      'Hasil maksimal',
+    ],
+    icon: <Star />,
   },
 ];
 
@@ -77,12 +93,12 @@ export default function ProgramsSection() {
             Pilih Program Renang Terbaik
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Kami menyediakan tiga program renang dengan pelatih profesional bersertifikat untuk mengembangkan kemampuan renang Anda.
+            Kami menyediakan empat program renang dengan pelatih profesional bersertifikat untuk mengembangkan kemampuan renang Anda.
           </p>
         </div>
 
         {/* Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {programs.map((program, idx) => (
             <ProgramCard
               key={idx}

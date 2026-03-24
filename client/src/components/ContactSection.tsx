@@ -193,8 +193,9 @@ export default function ContactSection() {
                 >
                   <option value="">Pilih program...</option>
                   <option value="pemula">Kelas Pemula (4+ tahun)</option>
-                  <option value="menengah">Kelas Menengah (8+ tahun)</option>
-                  <option value="mahir">Kelas Mahir (12+ tahun)</option>
+                  <option value="menengah">Kelas Menengah - Gaya Bebas & Dada (8+ tahun)</option>
+                  <option value="mahir">Kelas Mahir - 4 Gaya (12+ tahun)</option>
+                  <option value="private">Kelas Private - DM untuk harga</option>
                 </select>
               </div>
 

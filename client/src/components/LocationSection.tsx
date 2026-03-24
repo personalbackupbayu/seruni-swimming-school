@@ -10,26 +10,36 @@ import { Button } from '@/components/ui/button';
 export default function LocationSection() {
   const locations = [
     {
-      name: 'Lokasi Utama - Ciputat',
-      address: 'Jl. Renang No. 123, Ciputat, Tangerang Selatan',
+      name: 'Green Lake View Waterpark',
+      address: 'Green Lake View Waterpark, Dapok',
       phone: '+62 812-3456-7890',
-      email: 'ciputat@seruniswimming.com',
+      email: 'seruniswimmingschool@gmail.com',
+      poolLength: '25m',
+      mapLink: 'https://share.google/9tpCNk6wGjICSnMW5',
       hours: [
-        { day: 'Senin - Jumat', time: '06:00 - 18:00' },
-        { day: 'Sabtu - Minggu', time: '07:00 - 17:00' },
+        { day: 'Selasa', time: '15:00 - 17:00' },
+        { day: 'Rabu', time: '15:00 - 17:00' },
+        { day: 'Kamis', time: '15:00 - 17:00' },
+        { day: 'Sabtu', time: '06:00 - 08:00' },
+        { day: 'Minggu', time: '06:00 - 08:00' },
       ],
-      facilities: ['Kolam Renang 50m', 'Kolam Anak-anak', 'Ruang Ganti', 'Parkir Luas'],
+      facilities: ['Kolam Renang 25m', 'Ruang Ganti', 'Parkir Luas', 'Area Istirahat'],
     },
     {
-      name: 'Cabang - Jakarta Selatan',
-      address: 'Jl. Olahraga No. 456, Jakarta Selatan',
-      phone: '+62 812-3456-7891',
-      email: 'jakarta@seruniswimming.com',
+      name: 'Kolam Renang Soehardi Hubad',
+      address: 'Jl. Soehardi Hubad, Jakarta',
+      phone: '+62 812-3456-7890',
+      email: 'seruniswimmingschool@gmail.com',
+      poolLength: '50m',
+      mapLink: 'https://share.google/XOaDu3yrxUF9ek3B7',
       hours: [
-        { day: 'Senin - Jumat', time: '06:30 - 18:30' },
-        { day: 'Sabtu - Minggu', time: '08:00 - 17:00' },
+        { day: 'Selasa', time: '15:00 - 17:00' },
+        { day: 'Rabu', time: '15:00 - 17:00' },
+        { day: 'Kamis', time: '15:00 - 17:00' },
+        { day: 'Sabtu', time: '06:00 - 08:00' },
+        { day: 'Minggu', time: '06:00 - 08:00' },
       ],
-      facilities: ['Kolam Renang 25m', 'Kolam Anak-anak', 'Kafe', 'Parkir'],
+      facilities: ['Kolam Renang 50m', 'Ruang Ganti', 'Kafe', 'Parkir Luas'],
     },
   ];
 
@@ -45,7 +55,7 @@ export default function LocationSection() {
             Kunjungi Kami
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Kami memiliki beberapa lokasi strategis untuk kemudahan Anda mengakses layanan kami.
+            Kami memiliki dua lokasi strategis dengan fasilitas kolam renang berkualitas internasional.
           </p>
         </div>
 
@@ -57,7 +67,12 @@ export default function LocationSection() {
               className="border-2 border-border rounded-xl p-8 hover:shadow-lg hover:border-primary/50 transition-all duration-300"
             >
               {/* Location Name */}
-              <h3 className="heading-1 text-primary mb-6">{location.name}</h3>
+              <h3 className="heading-1 text-primary mb-2">{location.name}</h3>
+              <div className="flex items-center gap-2 mb-6">
+                <span className="inline-block bg-blue-50 text-primary px-3 py-1 rounded-full text-sm font-semibold">
+                  Panjang Kolam: {location.poolLength}
+                </span>
+              </div>
 
               {/* Address */}
               <div className="flex gap-3 mb-6">
@@ -75,7 +90,7 @@ export default function LocationSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Telepon</p>
                     <a href={`tel:${location.phone}`} className="text-primary font-semibold hover:underline">
-                      {location.phone}
+                      0878-8034-3055
                     </a>
                   </div>
                 </div>
@@ -95,7 +110,7 @@ export default function LocationSection() {
               <div className="mb-6">
                 <p className="font-semibold text-foreground mb-3 flex items-center gap-2">
                   <Clock size={20} className="text-primary" />
-                  Jam Operasional
+                  Jam Latihan
                 </p>
                 <ul className="space-y-2">
                   {location.hours.map((hour, i) => (
@@ -121,18 +136,20 @@ export default function LocationSection() {
               </div>
 
               {/* CTA Button */}
-              <Button className="w-full bg-primary hover:bg-blue-800 text-white font-semibold py-2 rounded-lg transition-all duration-200">
-                Lihat Lokasi di Maps
-              </Button>
+              <a href={location.mapLink} target="_blank" rel="noopener noreferrer">
+                <Button className="w-full bg-primary hover:bg-blue-800 text-white font-semibold py-2 rounded-lg transition-all duration-200">
+                  Lihat Lokasi di Maps
+                </Button>
+              </a>
             </div>
           ))}
         </div>
 
-        {/* Map Section */}
+        {/* Info Section */}
         <div className="bg-gradient-to-r from-primary/5 to-blue-100 rounded-xl p-8 text-center">
-          <h3 className="heading-1 text-primary mb-4">Lokasi Mudah Diakses</h3>
+          <h3 className="heading-1 text-primary mb-4">Jadwal Latihan Reguler</h3>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Kedua lokasi kami strategis dan mudah diakses dari berbagai area. Tersedia parkir luas dan fasilitas lengkap untuk kenyamanan Anda.
+            Kami membuka latihan renang setiap hari Selasa, Rabu, Kamis pukul 15:00-17:00 dan Sabtu-Minggu pukul 06:00-08:00 di kedua lokasi kami.
           </p>
           <Button className="bg-primary hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200">
             Hubungi Kami untuk Informasi Lebih Lanjut
