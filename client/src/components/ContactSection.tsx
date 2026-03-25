@@ -105,9 +105,9 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-foreground mb-1">Alamat</h4>
                 <p className="text-foreground/70">
-                  Jl. Renang No. 123<br />
-                  Ciputat, Tangerang Selatan<br />
-                  Indonesia
+                  Jl. Gatot Subroto, Curug<br />
+                  Kec. Cimanggis, Kota Depok<br />
+                  Jawa Barat 16453
                 </p>
               </div>
             </div>

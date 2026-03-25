@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram, Music } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, MessageCircle } from 'lucide-react';
 
 /**
  * Footer Component - Modern Aquatic Minimalism
@@ -100,7 +100,18 @@ export default function Footer() {
                 className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
                 aria-label="TikTok"
               >
-                <Music size={18} />
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 1 1-4.77-2.3A2.4 2.4 0 0 1 9.1 13.66V9.58a6.8 6.8 0 0 0-1-.05A6.33 6.33 0 0 0 5 10a6.3 6.3 0 0 0 5.1 12.15A6.79 6.79 0 0 0 20 12.75v-2a6.59 6.59 0 0 1-.41-3.06z" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/087880343055"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={18} />
               </a>
             </div>
           </div>
