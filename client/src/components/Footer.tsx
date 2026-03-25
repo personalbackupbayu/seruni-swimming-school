@@ -1,80 +1,132 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 
 /**
  * Footer Component - Modern Aquatic Minimalism
- * Informasi kontak, lokasi, dan jam operasional
- * Design: Clean footer dengan informasi yang terorganisir
+ * Responsive footer yang rapi di mobile, tablet, dan desktop
+ * Design: Clean layout dengan organized sections
  */
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-primary text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* About */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Seruni Swimming School</h3>
-            <p className="text-blue-100 text-sm leading-relaxed">
-              Sekolah renang profesional dengan pelatih bersertifikat, menyediakan program pembelajaran renang untuk semua usia dan tingkat kemampuan.
+    <footer className="bg-primary text-white">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          {/* Brand Section */}
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                <span className="font-bold text-primary text-lg">S</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Seruni</h3>
+                <p className="text-xs text-blue-100">Swimming School</p>
+              </div>
+            </div>
+            <p className="text-sm text-blue-100 leading-relaxed">
+              Sekolah renang profesional dengan pelatih bersertifikat internasional sejak 2012.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Menu</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="text-blue-100 hover:text-white transition-colors">Beranda</a></li>
-              <li><a href="#programs" className="text-blue-100 hover:text-white transition-colors">Program</a></li>
-              <li><a href="#location" className="text-blue-100 hover:text-white transition-colors">Lokasi</a></li>
-              <li><a href="#about" className="text-blue-100 hover:text-white transition-colors">Tentang</a></li>
+            <h4 className="font-semibold mb-4 text-base">Menu</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="#programs" className="text-blue-100 hover:text-white transition-colors">
+                  Program Kelas
+                </a>
+              </li>
+              <li>
+                <a href="#location" className="text-blue-100 hover:text-white transition-colors">
+                  Lokasi Kami
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="text-blue-100 hover:text-white transition-colors">
+                  Tentang Kami
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-blue-100 hover:text-white transition-colors">
+                  Hubungi Kami
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Kontak</h4>
+            <h4 className="font-semibold mb-4 text-base">Kontak</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-0.5 flex-shrink-0" />
-                <span className="text-blue-100">0878-8034-3055</span>
+                <a href="tel:087880343055" className="text-blue-100 hover:text-white transition-colors">
+                  0878-8034-3055
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-0.5 flex-shrink-0" />
-                <span className="text-blue-100">seruniswimmingschool@gmail.com</span>
+                <a href="mailto:seruniswimmingschool@gmail.com" className="text-blue-100 hover:text-white transition-colors break-all">
+                  seruniswimmingschool@gmail.com
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                <span className="text-blue-100">Jl. Renang No. 123, Jakarta</span>
+                <span className="text-blue-100 text-xs">
+                  Green Lake View Waterpark, Depok
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* Operating Hours */}
+          {/* Social Media */}
           <div>
-            <h4 className="font-semibold mb-4">Jam Operasional</h4>
-            <ul className="space-y-2 text-sm text-blue-100">
-              <li className="flex items-center gap-2">
-                <Clock size={16} />
-                <span>Senin - Jumat: 06:00 - 18:00</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Clock size={16} />
-                <span>Sabtu - Minggu: 07:00 - 17:00</span>
-              </li>
-            </ul>
+            <h4 className="font-semibold mb-4 text-base">Ikuti Kami</h4>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-blue-400 my-8"></div>
+        <div className="border-t border-white/20 my-8 md:my-12"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-blue-100">
-          <p>&copy; 2026 Seruni Swimming School. Semua hak dilindungi.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Kebijakan Privasi</a>
-            <a href="#" className="hover:text-white transition-colors">Syarat & Ketentuan</a>
-            <a href="#" className="hover:text-white transition-colors">Hubungi Kami</a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-blue-100">
+          <div className="text-center sm:text-left">
+            <p>&copy; {currentYear} Seruni Swimming School. All rights reserved.</p>
+          </div>
+          <div className="text-center sm:text-right space-x-4">
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <a href="#" className="hover:text-white transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

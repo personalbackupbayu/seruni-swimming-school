@@ -12,10 +12,10 @@ const programs = [
     title: 'Kelas Pemula',
     level: 'Dasar',
     description: 'Belajar teknik renang dasar untuk anak-anak dan pemula',
-    ageGroup: '4+ tahun',
-    duration: '45 menit',
-    price: 'Rp 400.000',
-    maxStudents: 6,
+    ageGroup: '5+ tahun',
+    duration: '60 menit',
+    price: 'Rp 200.000/bulan',
+    maxStudents: 5,
     features: [
       'Teknik gaya bebas dasar',
       'Keselamatan di air',
@@ -30,7 +30,7 @@ const programs = [
     description: 'Pengembangan teknik 2 gaya: Bebas dan Dada',
     ageGroup: '8+ tahun',
     duration: '60 menit',
-    price: 'Rp 500.000',
+    price: 'Rp 200.000/bulan',
     maxStudents: 8,
     features: [
       'Gaya Bebas (Freestyle)',
@@ -46,7 +46,7 @@ const programs = [
     description: 'Program untuk atlet dengan penguasaan 4 gaya renang',
     ageGroup: '12+ tahun',
     duration: '90 menit',
-    price: 'Rp 600.000',
+    price: 'Rp 250.000/bulan',
     maxStudents: 10,
     features: [
       'Gaya Bebas (Freestyle)',

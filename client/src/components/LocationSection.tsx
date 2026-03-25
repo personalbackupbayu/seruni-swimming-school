@@ -11,8 +11,8 @@ export default function LocationSection() {
   const locations = [
     {
       name: 'Green Lake View Waterpark',
-      address: 'Green Lake View Waterpark, Dapok',
-      phone: '+62 812-3456-7890',
+      address: 'Jl. Gatot Subroto, Curug, Kec. Cimanggis, Kota Depok, Jawa Barat 16453',
+      phone: '0878-8034-3055',
       email: 'seruniswimmingschool@gmail.com',
       poolLength: '25m',
       mapLink: 'https://share.google/9tpCNk6wGjICSnMW5',
@@ -27,8 +27,8 @@ export default function LocationSection() {
     },
     {
       name: 'Kolam Renang Soehardi Hubad',
-      address: 'Jl. Soehardi Hubad, Jakarta',
-      phone: '+62 812-3456-7890',
+      address: 'Batalyon Perhubungan Jatijajar, Jatijajar, Kec. Tapos, Kota Depok, Jawa Barat',
+      phone: '0878-8034-3055',
       email: 'seruniswimmingschool@gmail.com',
       poolLength: '50m',
       mapLink: 'https://share.google/XOaDu3yrxUF9ek3B7',
@@ -79,7 +79,7 @@ export default function LocationSection() {
                 <MapPin size={24} className="text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground mb-1">Alamat</p>
-                  <p className="text-foreground/70">{location.address}</p>
+                  <p className="text-foreground/70 text-sm">{location.address}</p>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@ export default function LocationSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Telepon</p>
                     <a href={`tel:${location.phone}`} className="text-primary font-semibold hover:underline">
-                      0878-8034-3055
+                      {location.phone}
                     </a>
                   </div>
                 </div>
