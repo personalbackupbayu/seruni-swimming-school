@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Music } from 'lucide-react';
 
 /**
  * Footer Component - Modern Aquatic Minimalism
@@ -16,15 +16,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Section */}
           <div className="flex flex-col">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <span className="font-bold text-primary text-lg">S</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">Seruni</h3>
-                <p className="text-xs text-blue-100">Swimming School</p>
-              </div>
-            </div>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/7496039864086037511_avatar.png_e0601b6f.jpg"
+              alt="Seruni Swimming School Logo"
+              className="h-20 w-auto mb-4"
+            />
             <p className="text-sm text-blue-100 leading-relaxed">
               Sekolah renang profesional dengan pelatih bersertifikat internasional sejak 2012.
             </p>
@@ -87,25 +83,22 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-base">Ikuti Kami</h4>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/seruniswimmingschool?igsh=MWN3bzFoazluZGVldw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@seruniswimmingschool?_r=1&_t=ZS-94zA7mjBtjQ"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Twitter"
+                aria-label="TikTok"
               >
-                <Twitter size={18} />
+                <Music size={18} />
               </a>
             </div>
           </div>

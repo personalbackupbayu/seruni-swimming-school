@@ -23,14 +23,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-blue-700 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">S</span>
-          </div>
-          <div className="flex flex-col">
-            <h1 className="text-lg font-bold text-primary">Seruni</h1>
-            <p className="text-xs text-muted-foreground">Swimming School</p>
-          </div>
+        <div className="flex items-center gap-3">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/7496039864086037511_avatar.png_e0601b6f.jpg"
+            alt="Seruni Swimming School Logo"
+            className="h-12 w-auto"
+          />
         </div>
 
         {/* Desktop Navigation */}
