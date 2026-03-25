@@ -23,7 +23,7 @@ export default function LocationSection() {
         { day: 'Sabtu', time: '06:00 - 08:00' },
         { day: 'Minggu', time: '06:00 - 08:00' },
       ],
-      facilities: ['Kolam Renang 25m', 'Ruang Ganti', 'Parkir Luas', 'Area Istirahat'],
+      facilities: ['Kolam Renang 25m', 'Parkir Luas', 'Ruang Ganti', 'Kafe'],
     },
     {
       name: 'Kolam Renang Soehardi Hubad',
@@ -39,7 +39,7 @@ export default function LocationSection() {
         { day: 'Sabtu', time: '06:00 - 08:00' },
         { day: 'Minggu', time: '06:00 - 08:00' },
       ],
-      facilities: ['Kolam Renang 50m', 'Ruang Ganti', 'Kafe', 'Parkir Luas'],
+      facilities: ['Kolam Renang 50m', 'Parkir Luas', 'Ruang Ganti', 'Area Istirahat'],
     },
   ];
 

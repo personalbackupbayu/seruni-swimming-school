@@ -96,7 +96,7 @@ export default function ProgramCard({
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs text-muted-foreground mb-1">Harga per bulan</p>
-            <p className="heading-2 text-primary">{price}</p>
+            <p className="text-sm font-semibold text-primary whitespace-nowrap">{price}</p>
             <p className="text-xs text-muted-foreground mt-1">Maks {maxStudents} siswa/kelas</p>
           </div>
           <Button

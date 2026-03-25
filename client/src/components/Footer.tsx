@@ -97,12 +97,14 @@ export default function Footer() {
                 href="https://www.tiktok.com/@seruniswimmingschool?_r=1&_t=ZS-94zA7mjBtjQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors overflow-hidden"
                 aria-label="TikTok"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 1 1-4.77-2.3A2.4 2.4 0 0 1 9.1 13.66V9.58a6.8 6.8 0 0 0-1-.05A6.33 6.33 0 0 0 5 10a6.3 6.3 0 0 0 5.1 12.15A6.79 6.79 0 0 0 20 12.75v-2a6.59 6.59 0 0 1-.41-3.06z" />
-                </svg>
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/e701fdda0ad0527dce86d75944b67f0a_6ff8c75f.png"
+                  alt="TikTok"
+                  className="w-full h-full object-cover"
+                />
               </a>
               <a
                 href="https://wa.me/087880343055"
