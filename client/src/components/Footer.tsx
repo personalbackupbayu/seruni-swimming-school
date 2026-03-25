@@ -88,16 +88,16 @@ export default function Footer() {
                 href="https://www.instagram.com/seruniswimmingschool?igsh=MWN3bzFoazluZGVldw=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                className="w-9 h-9 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram size={18} />
+                <Instagram size={16} />
               </a>
               <a
                 href="https://www.tiktok.com/@seruniswimmingschool?_r=1&_t=ZS-94zA7mjBtjQ"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors overflow-hidden"
+                className="w-9 h-9 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors overflow-hidden"
                 aria-label="TikTok"
               >
                 <img
@@ -110,10 +110,14 @@ export default function Footer() {
                 href="https://wa.me/087880343055"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
+                className="w-9 h-9 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors overflow-hidden"
                 aria-label="WhatsApp"
               >
-                <MessageCircle size={18} />
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/b6c2beb8db2cba477f4dc59e292954f6_e12a2838.webp"
+                  alt="WhatsApp"
+                  className="w-full h-full object-cover"
+                />
               </a>
             </div>
           </div>
