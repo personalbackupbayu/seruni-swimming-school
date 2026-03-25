@@ -16,11 +16,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Section */}
           <div className="flex flex-col">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/7496039864086037511_avatar.png_e0601b6f.jpg"
-              alt="Seruni Swimming School Logo"
-              className="h-20 w-auto mb-4"
-            />
+            <div className="bg-white/15 backdrop-blur-sm rounded-lg p-3 mb-4 inline-flex w-fit">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/7496039864086037511_avatar.png_e0601b6f.jpg"
+                alt="Seruni Swimming School Logo"
+                className="h-14 w-auto"
+              />
+            </div>
             <p className="text-sm text-blue-100 leading-relaxed">
               Sekolah renang profesional dengan pelatih bersertifikat internasional sejak 2012.
             </p>
