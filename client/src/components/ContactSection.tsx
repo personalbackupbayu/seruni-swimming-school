@@ -208,11 +208,11 @@ export default function ContactSection() {
                   className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors bg-white"
                 >
                   <option value="">Pilih Program</option>
-                  <option value="Pemula">Kelas Pemula</option>
-                  <option value="Menengah - Gaya Bebas">Kelas Menengah - Gaya Bebas</option>
-                  <option value="Menengah - Gaya Dada">Kelas Menengah - Gaya Dada</option>
-                  <option value="Mahir - 4 Gaya">Kelas Mahir - 4 Gaya</option>
-                  <option value="Private">Kelas Private</option>
+                  <option value="Pemula (5+ tahun, 60 menit, Rp 200.000/bulan)">Kelas Pemula - Rp 200.000/bulan</option>
+                  <option value="Menengah - Gaya Bebas (Rp 200.000/bulan)">Kelas Menengah - Gaya Bebas - Rp 200.000/bulan</option>
+                  <option value="Menengah - Gaya Dada (Rp 200.000/bulan)">Kelas Menengah - Gaya Dada - Rp 200.000/bulan</option>
+                  <option value="Mahir - 4 Gaya (Rp 250.000/bulan)">Kelas Mahir - 4 Gaya - Rp 250.000/bulan</option>
+                  <option value="Private (Hubungi untuk harga)">Kelas Private - Hubungi untuk harga</option>
                 </select>
               </div>
 
