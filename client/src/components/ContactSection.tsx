@@ -1,9 +1,12 @@
+'use client';
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { trpc } from '@/lib/trpc';
 
 /**
  * Contact Section Component - Modern Aquatic Minimalism
@@ -20,7 +23,26 @@ export default function ContactSection() {
     message: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitFormMutation = trpc.form.submitRegistration.useMutation({
+    onSuccess: (result) => {
+      if (result.success) {
+        toast.success(result.message);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          program: '',
+          message: '',
+        });
+      } else {
+        toast.error(result.message);
+      }
+    },
+    onError: (error) => {
+      toast.error('Terjadi kesalahan. Silakan coba lagi.');
+      console.error('Form submission error:', error);
+    },
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -32,21 +54,15 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      toast.success('Terima kasih! Kami akan menghubungi Anda segera.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        program: '',
-        message: '',
-      });
-      setIsSubmitting(false);
-    }, 1000);
+    // Validate form
+    if (!formData.name || !formData.email || !formData.phone || !formData.program) {
+      toast.error('Silakan isi semua field yang diperlukan');
+      return;
+    }
+
+    // Submit form via tRPC
+    submitFormMutation.mutate(formData);
   };
 
   return (
@@ -117,12 +133,12 @@ export default function ContactSection() {
               <h4 className="font-semibold text-foreground mb-4">Jam Operasional</h4>
               <ul className="space-y-2 text-sm text-foreground/70">
                 <li className="flex justify-between">
-                  <span>Senin - Jumat</span>
-                  <span className="font-semibold text-primary">06:00 - 18:00</span>
+                  <span>Selasa - Kamis</span>
+                  <span className="font-semibold text-primary">15:00 - 17:00</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Sabtu - Minggu</span>
-                  <span className="font-semibold text-primary">07:00 - 17:00</span>
+                  <span className="font-semibold text-primary">06:00 - 08:00</span>
                 </li>
               </ul>
             </div>
@@ -158,7 +174,7 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Masukkan email Anda"
+                    placeholder="email@example.com"
                     required
                     className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors"
                   />
@@ -172,7 +188,7 @@ export default function ContactSection() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Masukkan nomor telepon"
+                    placeholder="08xx-xxxx-xxxx"
                     required
                     className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors"
                   />
@@ -182,7 +198,7 @@ export default function ContactSection() {
               {/* Program Selection */}
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Program yang Diminati
+                  Program Pilihan
                 </label>
                 <select
                   name="program"
@@ -191,11 +207,12 @@ export default function ContactSection() {
                   required
                   className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors bg-white"
                 >
-                  <option value="">Pilih program...</option>
-                  <option value="pemula">Kelas Pemula (4+ tahun)</option>
-                  <option value="menengah">Kelas Menengah - Gaya Bebas & Dada (8+ tahun)</option>
-                  <option value="mahir">Kelas Mahir - 4 Gaya (12+ tahun)</option>
-                  <option value="private">Kelas Private - DM untuk harga</option>
+                  <option value="">Pilih Program</option>
+                  <option value="Pemula">Kelas Pemula</option>
+                  <option value="Menengah - Gaya Bebas">Kelas Menengah - Gaya Bebas</option>
+                  <option value="Menengah - Gaya Dada">Kelas Menengah - Gaya Dada</option>
+                  <option value="Mahir - 4 Gaya">Kelas Mahir - 4 Gaya</option>
+                  <option value="Private">Kelas Private</option>
                 </select>
               </div>
 
@@ -208,22 +225,24 @@ export default function ContactSection() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tulis pertanyaan atau pesan Anda di sini..."
-                  className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors resize-none h-32"
+                  placeholder="Tuliskan pesan atau pertanyaan Anda di sini"
+                  className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none transition-colors min-h-[120px]"
                 />
               </div>
 
               {/* Submit Button */}
               <Button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-blue-800 text-white font-semibold py-3 rounded-lg transition-all duration-200 disabled:opacity-50"
+                disabled={submitFormMutation.isPending}
+                className="w-full bg-primary hover:bg-blue-800 text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? 'Mengirim...' : 'Kirim Formulir'}
+                {submitFormMutation.isPending && <Loader2 size={20} className="animate-spin" />}
+                {submitFormMutation.isPending ? 'Mengirim...' : 'Daftar Sekarang'}
               </Button>
 
-              <p className="text-xs text-muted-foreground text-center">
-                Kami akan menghubungi Anda dalam waktu 24 jam untuk konfirmasi pendaftaran.
+              {/* Info Text */}
+              <p className="text-xs text-foreground/60 text-center">
+                Formulir Anda akan dikirim sebagai PDF ke email kami dan WhatsApp untuk konfirmasi lebih cepat.
               </p>
             </div>
           </form>
