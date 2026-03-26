@@ -73,9 +73,9 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                <span className="text-blue-100 text-xs">
+                <a href="https://share.google/51FaR5em8sO1A0mBc" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors text-xs">
                   Green Lake View Waterpark, Depok
-                </span>
+                </a>
               </li>
             </ul>
           </div>
@@ -103,11 +103,11 @@ export default function Footer() {
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/e701fdda0ad0527dce86d75944b67f0a_6ff8c75f.png"
                   alt="TikTok"
-                  className="w-full h-full object-cover"
+                  className="w-5 h-5 object-contain"
                 />
               </a>
               <a
-                href="https://wa.me/087880343055"
+                href="https://wa.me/6287880343055"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors overflow-hidden"
@@ -116,7 +116,7 @@ export default function Footer() {
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/b6c2beb8db2cba477f4dc59e292954f6_e12a2838.webp"
                   alt="WhatsApp"
-                  className="w-full h-full object-cover"
+                  className="w-5 h-5 object-contain"
                 />
               </a>
             </div>

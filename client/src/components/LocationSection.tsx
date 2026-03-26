@@ -104,6 +104,16 @@ export default function LocationSection() {
                     </a>
                   </div>
                 </div>
+
+                <div className="flex gap-3">
+                  <MapPin size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm text-muted-foreground">Lokasi</p>
+                    <a href="https://share.google/4f0VjuadOcTCVDAve" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">
+                      Buka di Google Maps
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Operating Hours */}
