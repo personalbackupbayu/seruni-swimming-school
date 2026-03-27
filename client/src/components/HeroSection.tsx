@@ -71,6 +71,7 @@ export default function HeroSection({
                 <Button
                   variant="outline"
                   className="border-2 border-primary text-primary hover:bg-blue-50 font-semibold px-8 py-3 rounded-lg transition-all duration-200"
+                  onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {ctaSecondary}
                 </Button>

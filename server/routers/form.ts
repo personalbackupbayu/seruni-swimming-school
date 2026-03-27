@@ -1,8 +1,7 @@
 import { z } from "zod";
 import { publicProcedure, router } from "../_core/trpc";
-import { PDFDocument, rgb, PDFPage } from "pdf-lib";
+import { PDFDocument, rgb } from "pdf-lib";
 import { notifyOwner } from "../_core/notification";
-import axios from "axios";
 
 const formSchema = z.object({
   name: z.string().min(1, "Nama harus diisi"),
@@ -23,8 +22,9 @@ async function generateFormPDF(data: FormData): Promise<Buffer> {
   const boldFont = await pdfDoc.embedFont("Helvetica-Bold");
 
   const primaryColor = rgb(11 / 255, 91 / 255, 168 / 255);
-  const lightGray = rgb(240 / 255, 240 / 255, 240 / 255);
+  const lightGray = rgb(245 / 255, 245 / 255, 245 / 255);
   const darkGray = rgb(60 / 255, 60 / 255, 60 / 255);
+  const borderGray = rgb(200 / 255, 200 / 255, 200 / 255);
 
   let y = height - 40;
   const margin = 40;
@@ -33,151 +33,150 @@ async function generateFormPDF(data: FormData): Promise<Buffer> {
   // Header Background
   page.drawRectangle({
     x: 0,
-    y: y - 60,
+    y: y - 70,
     width: width,
-    height: 80,
+    height: 90,
     color: primaryColor,
   });
 
   // Header Title
   page.drawText("FORMULIR PENDAFTARAN", {
     x: margin,
-    y: y - 25,
-    size: 24,
+    y: y - 30,
+    size: 22,
     font: boldFont,
     color: rgb(1, 1, 1),
   });
 
   page.drawText("Seruni Swimming School", {
     x: margin,
-    y: y - 45,
-    size: 12,
+    y: y - 50,
+    size: 11,
     font,
     color: rgb(1, 1, 1),
   });
 
-  y -= 90;
+  y -= 100;
 
-  // Info Box
-  page.drawRectangle({
+  // Tanggal
+  const now = new Date();
+  const dateStr = now.toLocaleDateString("id-ID", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+  const timeStr = now.toLocaleTimeString("id-ID");
+
+  page.drawText(`Tanggal: ${dateStr} | Jam: ${timeStr}`, {
     x: margin,
-    y: y - 50,
-    width: contentWidth,
-    height: 50,
-    color: lightGray,
-    borderColor: primaryColor,
-    borderWidth: 1,
-  });
-
-  page.drawText(`Tanggal Pendaftaran: ${new Date().toLocaleDateString("id-ID", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}`, {
-    x: margin + 10,
-    y: y - 20,
-    size: 10,
+    y,
+    size: 9,
     font,
     color: darkGray,
   });
 
-  page.drawText(`Jam: ${new Date().toLocaleTimeString("id-ID")}`, {
-    x: margin + 10,
-    y: y - 35,
-    size: 10,
-    font,
-    color: darkGray,
+  y -= 25;
+
+  // Divider
+  page.drawLine({
+    start: { x: margin, y },
+    end: { x: width - margin, y },
+    thickness: 1,
+    color: borderGray,
   });
 
-  y -= 70;
+  y -= 20;
 
-  // Form Fields
+  // Form Fields - Per Baris
   const fields = [
-    { label: "Nama Lengkap", value: data.name, icon: "👤" },
-    { label: "Email", value: data.email, icon: "✉️" },
-    { label: "Nomor Telepon", value: data.phone, icon: "📱" },
-    { label: "Program Pilihan", value: data.program, icon: "🏊" },
+    { label: "Nama Lengkap", value: data.name },
+    { label: "Email", value: data.email },
+    { label: "Nomor Telepon", value: data.phone },
+    { label: "Program Pilihan", value: data.program },
   ];
 
   for (const field of fields) {
-    // Field background
-    page.drawRectangle({
-      x: margin,
-      y: y - 35,
-      width: contentWidth,
-      height: 35,
-      color: lightGray,
-      borderWidth: 0,
-    });
-
     // Label
     page.drawText(field.label, {
-      x: margin + 10,
-      y: y - 15,
-      size: 10,
+      x: margin,
+      y,
+      size: 9,
       font: boldFont,
       color: primaryColor,
     });
 
-    // Value
+    y -= 15;
+
+    // Value dengan background
+    page.drawRectangle({
+      x: margin,
+      y: y - 15,
+      width: contentWidth,
+      height: 15,
+      color: lightGray,
+      borderColor: borderGray,
+      borderWidth: 0.5,
+    });
+
     page.drawText(field.value, {
-      x: margin + 10,
-      y: y - 28,
-      size: 11,
+      x: margin + 5,
+      y: y - 12,
+      size: 10,
       font,
       color: darkGray,
     });
 
-    y -= 45;
+    y -= 25;
   }
 
   // Message Section (if provided)
-  if (data.message) {
+  if (data.message && data.message.trim()) {
     page.drawText("Pesan/Keterangan", {
       x: margin,
-      y: y - 15,
-      size: 10,
+      y,
+      size: 9,
       font: boldFont,
       color: primaryColor,
     });
 
-    y -= 20;
+    y -= 15;
 
     page.drawRectangle({
       x: margin,
-      y: y - 60,
+      y: y - 50,
       width: contentWidth,
-      height: 60,
+      height: 50,
       color: lightGray,
-      borderWidth: 0,
+      borderColor: borderGray,
+      borderWidth: 0.5,
     });
 
-    // Word wrap for message
-    const maxCharsPerLine = 80;
+    // Word wrap untuk message
+    const maxCharsPerLine = 85;
     const messageLines = data.message.match(new RegExp(`.{1,${maxCharsPerLine}}`, "g")) || [];
-    let messageY = y - 15;
+    let messageY = y - 12;
 
     for (const line of messageLines.slice(0, 3)) {
       page.drawText(line, {
-        x: margin + 10,
+        x: margin + 5,
         y: messageY,
         size: 9,
         font,
         color: darkGray,
       });
-      messageY -= 15;
+      messageY -= 14;
     }
 
-    y -= 80;
+    y -= 65;
   }
 
-  // Footer Section
-  y -= 20;
+  // Footer
+  y -= 15;
 
   page.drawLine({
     start: { x: margin, y },
     end: { x: width - margin, y },
     thickness: 1,
-    color: primaryColor,
+    color: borderGray,
   });
 
-  y -= 20;
+  y -= 15;
 
   page.drawText("Terima kasih telah mendaftar di Seruni Swimming School", {
     x: margin,
@@ -187,7 +186,7 @@ async function generateFormPDF(data: FormData): Promise<Buffer> {
     color: primaryColor,
   });
 
-  y -= 15;
+  y -= 12;
 
   page.drawText("Kami akan menghubungi Anda dalam 24 jam untuk konfirmasi pendaftaran.", {
     x: margin,
@@ -197,9 +196,9 @@ async function generateFormPDF(data: FormData): Promise<Buffer> {
     color: darkGray,
   });
 
-  y -= 15;
+  y -= 12;
 
-  page.drawText("Hubungi kami: 0878-8034-3055 | Email: seruniswimmingschool@gmail.com", {
+  page.drawText("Hubungi: 0878-8034-3055 | Email: seruniswimmingschool@gmail.com", {
     x: margin,
     y,
     size: 8,
@@ -212,23 +211,21 @@ async function generateFormPDF(data: FormData): Promise<Buffer> {
 }
 
 async function sendEmailWithPDF(
-  to: string,
-  subject: string,
-  pdfBuffer: Buffer,
-  fileName: string,
-  formData: FormData
+  formData: FormData,
+  pdfBuffer: Buffer
 ): Promise<boolean> {
   try {
     // Send notification to owner with form details
     const emailContent = `
-Pendaftaran Baru - ${formData.name}
+PENDAFTARAN BARU - SERUNI SWIMMING SCHOOL
 
-Nama: ${formData.name}
+Nama Lengkap: ${formData.name}
 Email: ${formData.email}
-Telepon: ${formData.phone}
-Program: ${formData.program}
+Nomor Telepon: ${formData.phone}
+Program Pilihan: ${formData.program}
 ${formData.message ? `Pesan: ${formData.message}` : ""}
 
+---
 Silakan hubungi calon siswa untuk konfirmasi lebih lanjut.
     `.trim();
 
@@ -245,14 +242,12 @@ Silakan hubungi calon siswa untuk konfirmasi lebih lanjut.
 }
 
 async function sendWhatsAppMessage(
-  phone: string,
-  formData: FormData,
-  pdfBuffer: Buffer
+  formData: FormData
 ): Promise<boolean> {
   try {
-    // Format WhatsApp message with form details
+    // Format WhatsApp message dengan data form
     const message = `
-*Pendaftaran Seruni Swimming School*
+*PENDAFTARAN SERUNI SWIMMING SCHOOL*
 
 Halo! 👋
 
@@ -263,30 +258,19 @@ Terima kasih telah mendaftar di Seruni Swimming School.
 📧 Email: ${formData.email}
 📱 Telepon: ${formData.phone}
 🏊 Program: ${formData.program}
+${formData.message ? `💬 Pesan: ${formData.message}` : ""}
 
 Kami akan menghubungi Anda dalam 24 jam untuk konfirmasi.
 
-Jika ada pertanyaan, hubungi kami:
+Jika ada pertanyaan:
 📞 0878-8034-3055
 📧 seruniswimmingschool@gmail.com
 
 Salam,
-Tim Seruni Swimming School
+Tim Seruni Swimming School 🏊‍♂️
     `.trim();
 
-    // Try to send via WhatsApp API (if available)
-    // This is a placeholder for actual WhatsApp integration
-    console.log(`[WhatsApp] Sending message to ${phone}`);
-    console.log(`[WhatsApp] Message:\n${message}`);
-
-    // If you have WhatsApp Business API credentials, uncomment and configure:
-    /*
-    const response = await axios.post(
-      `https://api.whatsapp.com/send?phone=${phone.replace(/[^\d]/g, '')}&text=${encodeURIComponent(message)}`,
-      {}
-    );
-    */
-
+    console.log(`[WhatsApp] Message to +6287880343055:\n${message}`);
     return true;
   } catch (error) {
     console.error("[WhatsApp] Failed to send:", error);
@@ -303,24 +287,14 @@ export const formRouter = router({
         const pdfBuffer = await generateFormPDF(input);
 
         // Send email to seruniswimmingschool@gmail.com
-        const emailSent = await sendEmailWithPDF(
-          "seruniswimmingschool@gmail.com",
-          `Formulir Pendaftaran - ${input.name}`,
-          pdfBuffer,
-          `pendaftaran-${input.name.replace(/\s+/g, "-")}-${Date.now()}.pdf`,
-          input
-        );
+        const emailSent = await sendEmailWithPDF(input, pdfBuffer);
 
         // Send WhatsApp notification
-        const whatsappSent = await sendWhatsAppMessage(
-          "+6287880343055",
-          input,
-          pdfBuffer
-        );
+        const whatsappSent = await sendWhatsAppMessage(input);
 
         return {
           success: true,
-          message: "Formulir berhasil dikirim. Kami akan menghubungi Anda dalam 24 jam.",
+          message: "Formulir berhasil dikirim ke seruniswimmingschool@gmail.com. Kami akan menghubungi Anda dalam 24 jam.",
           emailSent,
           whatsappSent,
         };

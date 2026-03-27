@@ -209,9 +209,8 @@ export default function ContactSection() {
                 >
                   <option value="">Pilih Program</option>
                   <option value="Pemula (5+ tahun, 60 menit, Rp 200.000/bulan)">Kelas Pemula - Rp 200.000/bulan</option>
-                  <option value="Menengah - Gaya Bebas (Rp 200.000/bulan)">Kelas Menengah - Gaya Bebas - Rp 200.000/bulan</option>
-                  <option value="Menengah - Gaya Dada (Rp 200.000/bulan)">Kelas Menengah - Gaya Dada - Rp 200.000/bulan</option>
-                  <option value="Mahir - 4 Gaya (Rp 250.000/bulan)">Kelas Mahir - 4 Gaya - Rp 250.000/bulan</option>
+                  <option value="Menengah (Gaya Bebas & Dada, Rp 200.000/bulan)">Kelas Menengah - Rp 200.000/bulan</option>
+                  <option value="Mahir (4 Gaya, Rp 250.000/bulan)">Kelas Mahir - Rp 250.000/bulan</option>
                   <option value="Private (Hubungi untuk harga)">Kelas Private - Hubungi untuk harga</option>
                 </select>
               </div>
