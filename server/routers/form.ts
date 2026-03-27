@@ -216,18 +216,25 @@ async function sendEmailWithPDF(
 ): Promise<boolean> {
   try {
     // Send notification to owner with form details
-    const emailContent = `
-PENDAFTARAN BARU - SERUNI SWIMMING SCHOOL
+    const emailContent = `PENDAFTARAN BARU - SERUNI SWIMMING SCHOOL
 
-Nama Lengkap: ${formData.name}
-Email: ${formData.email}
-Nomor Telepon: ${formData.phone}
-Program Pilihan: ${formData.program}
-${formData.message ? `Pesan: ${formData.message}` : ""}
+Nama Lengkap:
+${formData.name}
+
+Email:
+${formData.email}
+
+Nomor Telepon:
+${formData.phone}
+
+Program Pilihan:
+${formData.program}
+${formData.message ? `
+Pesan:
+${formData.message}` : ""}
 
 ---
-Silakan hubungi calon siswa untuk konfirmasi lebih lanjut.
-    `.trim();
+Silakan hubungi calon siswa untuk konfirmasi lebih lanjut.`;
 
     await notifyOwner({
       title: `Pendaftaran Baru: ${formData.name}`,
