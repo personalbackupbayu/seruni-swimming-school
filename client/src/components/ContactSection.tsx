@@ -145,11 +145,11 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="lg:col-span-2 bg-gradient-to-br from-blue-50 to-white border-2 border-border rounded-xl p-8">
-            <div className="space-y-6">
+          <form onSubmit={handleSubmit} className="lg:col-span-2 bg-gradient-to-br from-blue-50 to-white border-2 border-border rounded-xl p-4 sm:p-6 lg:p-8">
+            <div className="space-y-4 sm:space-y-6">
               {/* Name */}
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">
+                <label className="block text-xs sm:text-sm font-semibold text-foreground mb-2">
                   Nama Lengkap
                 </label>
                 <Input

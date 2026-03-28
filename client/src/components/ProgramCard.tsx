@@ -37,19 +37,19 @@ export default function ProgramCard({
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-primary/50 border-2 border-border">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary/5 to-blue-100 p-6 border-b border-border">
+      <div className="bg-gradient-to-r from-primary/5 to-blue-100 p-4 sm:p-6 border-b border-border">
         <div className="flex items-start justify-between mb-3">
           <div>
-            <h3 className="heading-2 text-primary mb-1">{title}</h3>
-            <Badge className="bg-primary/10 text-primary border-primary/20">{level}</Badge>
+            <h3 className="text-lg sm:text-xl font-bold text-primary mb-1">{title}</h3>
+            <Badge className="bg-primary/10 text-primary border-primary/20 text-xs">{level}</Badge>
           </div>
-          {icon && <div className="text-primary/30 text-4xl">{icon}</div>}
+          {icon && <div className="text-primary/30 text-3xl sm:text-4xl">{icon}</div>}
         </div>
-        <p className="text-sm text-foreground/70">{description}</p>
+        <p className="text-xs sm:text-sm text-foreground/70">{description}</p>
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-6">
+      <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
         {/* Info Grid */}
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-center gap-3">

@@ -44,33 +44,33 @@ export default function HeroSection({
           {/* Left Side - Text Content */}
           <div className="max-w-lg">
             <div className="inline-block mb-4">
-              <span className="text-sm font-semibold text-primary bg-blue-50 px-4 py-2 rounded-full">
+              <span className="text-xs sm:text-sm font-semibold text-primary bg-blue-50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
                 {subtitle}
               </span>
             </div>
 
-            <h1 className="display-1 text-primary mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
               {title}
             </h1>
 
-            <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-8 leading-relaxed">
               {description}
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
-                className="bg-primary hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+                className="bg-primary hover:bg-blue-800 text-white font-semibold px-6 py-2 sm:px-8 sm:py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
                 onClick={onCtaClick}
               >
                 {ctaText}
-                <ChevronRight size={20} />
+                <ChevronRight size={18} className="sm:w-5 sm:h-5" />
               </Button>
 
               {ctaSecondary && (
                 <Button
                   variant="outline"
-                  className="border-2 border-primary text-primary hover:bg-blue-50 font-semibold px-8 py-3 rounded-lg transition-all duration-200"
+                  className="border-2 border-primary text-primary hover:bg-blue-50 font-semibold px-6 py-2 sm:px-8 sm:py-3 rounded-lg transition-all duration-200 text-sm sm:text-base"
                   onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   {ctaSecondary}
