@@ -82,17 +82,17 @@ export default function ProgramsSection() {
   };
 
   return (
-    <section id="programs" className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section id="programs" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-primary bg-blue-50 px-4 py-2 rounded-full inline-block mb-4">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <span className="text-xs sm:text-sm font-semibold text-primary bg-blue-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full inline-block mb-3 sm:mb-4">
             Program Kami
           </span>
-          <h2 className="display-2 text-primary mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4">
             Pilih Program Renang Terbaik
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-foreground/70 max-w-2xl mx-auto">
             Kami menyediakan empat program renang dengan pelatih profesional bersertifikat untuk mengembangkan kemampuan renang Anda.
           </p>
         </div>

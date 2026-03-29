@@ -44,27 +44,27 @@ export default function LocationSection() {
   ];
 
   return (
-    <section id="location" className="py-20 bg-white">
+    <section id="location" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-primary bg-blue-50 px-4 py-2 rounded-full inline-block mb-4">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <span className="text-xs sm:text-sm font-semibold text-primary bg-blue-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full inline-block mb-3 sm:mb-4">
             Lokasi Kami
           </span>
-          <h2 className="display-2 text-primary mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4">
             Kunjungi Kami
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-foreground/70 max-w-2xl mx-auto">
             Kami memiliki dua lokasi strategis dengan fasilitas kolam renang berkualitas internasional.
           </p>
         </div>
 
         {/* Locations Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-10 lg:mb-12">
           {locations.map((location, idx) => (
             <div
               key={idx}
-              className="border-2 border-border rounded-xl p-8 hover:shadow-lg hover:border-primary/50 transition-all duration-300"
+              className="border-2 border-border rounded-xl p-4 sm:p-6 lg:p-8 hover:shadow-lg hover:border-primary/50 transition-all duration-300"
             >
               {/* Location Name */}
               <h3 className="heading-1 text-primary mb-2">{location.name}</h3>

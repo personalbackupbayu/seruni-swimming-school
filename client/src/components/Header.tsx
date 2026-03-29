@@ -23,18 +23,18 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-2">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-1.5 sm:p-2">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/7496039864086037511_avatar.png_e0601b6f.jpg"
               alt="Seruni Swimming School Logo"
-              className="h-10 w-auto"
+              className="h-8 sm:h-10 w-auto"
             />
           </div>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -47,12 +47,12 @@ export default function Header() {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:flex items-center gap-4">
-          <a href="tel:087880343055" className="text-sm text-primary font-semibold hover:underline">
+        <div className="hidden md:flex items-center gap-3 lg:gap-4">
+          <a href="tel:087880343055" className="text-xs lg:text-sm text-primary font-semibold hover:underline">
             0878-8034-3055
           </a>
           <Button
-            className="bg-primary hover:bg-blue-800 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-200"
+            className="bg-primary hover:bg-blue-800 text-white font-semibold px-4 lg:px-6 py-2 rounded-lg transition-all duration-200 text-sm"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Daftar Sekarang

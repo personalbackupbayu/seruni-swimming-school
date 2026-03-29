@@ -31,26 +31,26 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-primary bg-blue-50 px-4 py-2 rounded-full inline-block mb-4">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <span className="text-xs sm:text-sm font-semibold text-primary bg-blue-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full inline-block mb-3 sm:mb-4">
             Tentang Kami
           </span>
-          <h2 className="display-2 text-primary mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4">
             Mengapa Memilih Seruni?
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-foreground/70 max-w-2xl mx-auto">
             Seruni Swimming School adalah pilihan terpercaya untuk pembelajaran renang berkualitas dengan standar internasional.
           </p>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-12 sm:mb-14 lg:mb-16">
           {/* Left - Image */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/10 to-blue-100 rounded-2xl overflow-hidden h-96">
+            <div className="bg-gradient-to-br from-primary/10 to-blue-100 rounded-2xl overflow-hidden h-64 sm:h-80 lg:h-96">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663469394974/VkGPRQxtHH4MgjsoPUiVdv/hero-family-eALSJY2ZzViof8MebsQV59.webp"
                 alt="Seruni Swimming School"
