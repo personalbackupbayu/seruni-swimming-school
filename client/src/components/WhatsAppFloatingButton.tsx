@@ -20,7 +20,7 @@ export default function WhatsAppFloatingButton() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 group"
+        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 group"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -48,7 +48,7 @@ export default function WhatsAppFloatingButton() {
       </a>
 
       {/* Mobile-optimized version with text label */}
-      <div className="fixed bottom-6 right-6 z-40 md:hidden">
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 md:hidden">
         <a
           href={whatsappUrl}
           target="_blank"
